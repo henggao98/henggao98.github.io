@@ -3,11 +3,11 @@
 # Site wide configuration
 ####################################
 #
-title: zhujiajun
-email: zhujiajun.me@gmail.com
-description: zhujiajun's blog,powered by jekyll.
-url: https://zjiajun.github.io # the base hostname & protocol for your site
-keywords: ["jekyll", "java", "scala","blog"]
+title: HENG GAO
+email: heng.gao@outlook.com
+description: henggao's blog,powered by jekyll.
+url: https://henggao98.github.io # the base hostname & protocol for your site
+keywords: ["jekyll", "java", "backend","blog"]
 
 #
 ###################################
@@ -37,11 +37,11 @@ plugins:
 ####################################
 #
 owner:
-  name: heng gao
+  name: henggao
   avatar: avatar.jpg
-  job: "Java & Scala Developer"
-  bio: "A backend developer who loves design awesome things. Working for Dianping at in Shanghai, China."
-  email: zhujiajun.me@gmail.com
+  job: "Java Backend Developer"
+  bio: "A computer science student at the University of Manchester currently living in Chang Shu, China."
+  email: heng.gao@outlook.com
   disqus-shortname: #username
   twitter:  #username
   facebook: #username
@@ -52,7 +52,7 @@ owner:
     ad-client:
     ad-slot:
   bing-verify:
-  github: zjiajun #username
+  github: henggao98 #username
   stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
   linkedin: #username
   xing: #username
