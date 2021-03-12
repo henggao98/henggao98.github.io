@@ -37,10 +37,12 @@ plugins:
 ####################################
 #
 owner:
-  name: henggao
+  name: HENG GAO
   avatar: avatar.jpg
   job: "Java Backend Developer"
-  bio: "A computer science student at the University of Manchester currently living in Chang Shu, China."
+  bio: "A computer science student\n
+  at the University of Manchester 
+  \ncurrently living in Chang Shu, China."
   email: heng.gao@outlook.com
   disqus-shortname: #username
   twitter:  #username
