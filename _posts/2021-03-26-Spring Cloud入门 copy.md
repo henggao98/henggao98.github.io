@@ -2,7 +2,7 @@
 layout: post
 title:  Spring Cloud 入门与Ribbon的使用
 category: [springcloud]
-tags: [Spring Cloud][Microservice]
+tags: [Spring Cloud]
 modified: 2021-03-26
 ---
 
