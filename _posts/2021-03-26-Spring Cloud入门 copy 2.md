@@ -25,7 +25,7 @@ modified: 2021-03-26
 
 
 
-##Eureka VS ZooKeeper
+## Eureka VS ZooKeeper
 
 ### What is Eureka？
 
@@ -35,7 +35,7 @@ modified: 2021-03-26
 - C/S 客户端 服务端架构，服务端作为注册中心，客户端连接到服务端，维持心跳连接。
 - 客户端是一个java客户端，用来简化与服务器的交互、负载均衡，故障切换等。（以jar包的形式存在，可以放入项目）
 
-###与zookeeper区别
+### 与zookeeper区别
 
 前提：CAP理论 Consistence,Availabile,Partition Tolerance.
 
@@ -43,7 +43,7 @@ modified: 2021-03-26
   - zookeeper采用leader election，有时候会不可用。
   - Eureka的节点是平等的，节点的挂掉，不影响整体，但是不保证强一致性。
 
-##Spring Cloud 与Eureka的配置与搭建
+## Spring Cloud 与Eureka的配置与搭建
 
 创建一个注册中心模块，引入server模块，标注application为eureka server，配置对应端口和注册中心地址。
 
@@ -103,22 +103,22 @@ public class BeanConfig {
 
 有了Ribbon的支持之后，调用不需要写死的IP和端口，仅需要服务的名称即可。
 
-##Load Balance
+## Load Balance
 
 ### 负载均衡的种类
 
 - 硬件方法：F5、深信服、Array
 - 软件方法：Nginx、LVS、HAProx
 
-###负载均衡的原理：
+### 负载均衡的原理：
 
 1. 通过心跳检测来剔除故障节点
 2. 维护一个可用的服务端清淡
 3. 接收到客户端请求时，通过轮训、权重、最小连接数等算法分配服务器节点
 
-##What is Ribbon？
+## What is Ribbon？
 
-核心任务是调用服务
+### 核心任务是调用服务
 
 - 服务的发现由eureka client实现，但是服务的调用实际由Ribbon完成。
 
@@ -126,7 +126,7 @@ public class BeanConfig {
 
 - 通过维护一个服务清单来实现服务的调用：当Ribbon对服务进行访问的时候，它会扩展Eureka客户端的服务发现功能，实现从Eureka注册中心**获取服务端列表**，并通过Eureka客户端来确定服务端是否已经启动。
 
-Ribbon的使用
+### Ribbon的使用
 
 - Spring Cloud对RIboon进行了二次封装，可以让我们使用RestTemplate的服务请求，自动转换成客户端负载均衡的服务调用。
 - 所以在使用时，Ribbon主要和RestTemplate对象配合使用，Ribbon会自动化配置RestTemplate对象，通过@LoadBalanced开启RestTemplate对象调用时的负载均衡。
@@ -134,12 +134,12 @@ Ribbon的使用
   1. 服务注册到注册中心（常规操作）
   2. 在消费者中使用@LoadBalanced修饰RestTemplate来调用远程调用步骤1中注册的服务
 
-Ribbon的方便之处
+### Ribbon的方便之处
 
 1. RIbbon支持多种负载均衡算法，还支持自定义的负载均衡算法。
 2. Ribbon只是一个工具类的框架，小巧，Spring Cloud对其进行封装后使用方便，不像服务注册中心、配置中心、API网关需要独立配置，Ribbon可以直接在代码中使用。
 
-Ribbon和Nginx的区别：
+### Ribbon和Nginx的区别：
 
 1. Ribbon是客户端的负载均衡，Nginx是服务端的负载均衡。区别在于服务端清单的存储位置不同。
    - 因为Ribbon是客户端的负载均衡，所以获取服务端清单，需要取服务注册中心去获取，比如Eureka Registry。
@@ -170,7 +170,7 @@ Ribbon和Nginx的区别：
 
 4. RetryRule
 
-总结：
+### 总结：
 
 | 1                         | 2                                                            |
 | ------------------------- | ------------------------------------------------------------ |
@@ -185,7 +185,7 @@ Ribbon和Nginx的区别：
 
 ## RestTemplate的基本使用
 
-###使用restTemplate.getForEntity()
+### 使用restTemplate.getForEntity()
 
 首先我们在consumer中写一个controller拦截来自web的请求。
 
@@ -211,7 +211,7 @@ Ribbon和Nginx的区别：
 
 ```
 
-###使用restTemplate.getForObject()
+### 使用restTemplate.getForObject()
 
 直接返回Body，并转化为对象，等价于restTemplate.getForObject().getBody();
 
@@ -225,9 +225,9 @@ Ribbon和Nginx的区别：
 
 
 
-##RestTemplae使用实例
+## RestTemplae使用实例
 
-####@GET
+### @GET
 
 ```java
 @GetMapping("/web/getUser")
@@ -256,7 +256,7 @@ Ribbon和Nginx的区别：
     }
 ```
 
-####@POST
+### @POST
 
 ```java
  @RequestMapping("/web/addUser")
@@ -280,7 +280,7 @@ Ribbon和Nginx的区别：
     }
 ```
 
-####@PUT
+### @PUT
 
 ```java
  @RequestMapping("/web/updateUser")
@@ -299,7 +299,7 @@ Ribbon和Nginx的区别：
 
 ```
 
-#### @DELETE
+### @DELETE
 
 ```java
     @RequestMapping("/web/deleteUser")
