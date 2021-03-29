@@ -3,6 +3,7 @@ layout: post
 title:  领域驱动架构的基本概念以及其基本的设计步骤
 category: [DDD]
 tags: [DDD][Design]
+modified: 2021-03-19
 ---
 # DDD 基础概念01—领域模型—实体、值对象、聚合、聚合根
 
